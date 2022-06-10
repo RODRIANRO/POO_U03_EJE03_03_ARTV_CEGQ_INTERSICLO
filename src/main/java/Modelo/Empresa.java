@@ -12,7 +12,7 @@ import java.time.LocalDate;
  */
 public class Empresa {
     
- private int codigo;
+   private int codigo;
     private String nombre;
     private String nombreFundador;
     private String pais;

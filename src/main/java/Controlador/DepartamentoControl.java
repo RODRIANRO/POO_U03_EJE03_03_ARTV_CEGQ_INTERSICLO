@@ -4,7 +4,7 @@
  */
 package Controlador;
         
- import java.util.List;
+import java.util.List;
 import Modelo.Departamento;
 import Modelo.Empleado;
 import Modelo.Empresa;
@@ -15,23 +15,44 @@ import Servicio.DepartamentoServicio;
  * @author NOTEBOOK
  */
 public class DepartamentoControl {
-     private final DepartamentoServicio departamentoServicio = new DepartamentoServicio();
+     private final DepartamentoServicio departamentoService = new DepartamentoServicio();
     
     public Departamento crearDepartamento(int codigo, String nombre, Empresa empresa, String ubicacion){
-        return departamentoServicio.crearDepartamento(new Departamento(codigo, nombre, empresa, ubicacion));
+        return departamentoService.crearDepartamento(new Departamento(codigo, nombre, empresa, ubicacion));
     }
     
     public List<Departamento> listarDepartamentos(){
-        return departamentoServicio.listarDepartementos();
+        return departamentoService.listarDepartementos();
     }
     
     public Departamento getDepartamentoByCode(int code){
-        return departamentoServicio.getDepartamentoByCode(code);
+        return departamentoService.getDepartamentoByCode(code);
     }
     
     public void asignarGerenteDepartemento(int codigo, Empleado empleado){
-        departamentoServicio.asignarGerente(codigo, empleado);
+        departamentoService.asignarGerente(codigo, empleado);
         
     }
+    
+   
+     // Metodos validacion
+    
+    // valida que solo se ingresen numeros en el campo "codigo"
+    public boolean validarSoloNumeros(char codigo){
+        boolean flag = false;
+        if(Character.isDigit(codigo)){
+            flag = true;
+        }
+        return flag;
+    }
+    
+    // valida que solo se ingrese texto en el campo ------
+    public boolean validarSoloTexto(char texto){
+        boolean flag = false;
+        if(Character.isLetter(texto) || Character.isSpaceChar(texto) || Character.isUpperCase(texto)){
+            flag = true;
+        }
+        return flag;
+                
+    }
 }
-

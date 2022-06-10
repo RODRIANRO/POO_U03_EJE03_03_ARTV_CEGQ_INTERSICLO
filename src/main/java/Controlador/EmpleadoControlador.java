@@ -15,7 +15,7 @@ import Servicio.EmpleadoServicio;
  * @author NOTEBOOK
  */
 public class EmpleadoControlador {
-    private final EmpleadoServicio empleadoServicio = new EmpleadoServicio();
+  private final EmpleadoServicio empleadoServicio = new EmpleadoServicio();
     
     public Empleado crearEmpleado(String cedula, String nombre, int anioNacimiento, int mesNacimiento, int diaNacimiento, 
             String nacionalidad, String direccion, String cargo, float salario, Departamento departamento){
@@ -34,13 +34,33 @@ public class EmpleadoControlador {
         return empleadoServicio.listarEmpleados();
     }
     
-    public Empleado getEmpladoByCedula(String cedula){
+    public Empleado getEmpleadoByCedula(String cedula){
         return empleadoServicio.getEmpleadoByCedula(cedula);
     }
     
-     public void cambiarDepartamento(String cedula, Departamento departamento){
-        empleadoServicio.cambiarDepartamento(cedula, departamento);
+     public void asignarDepartamento(String cedula, Departamento departamento){
+        empleadoServicio.asignarDepartamento(cedula, departamento);
+    }
+     
+      // Metodos validacion
+    
+    // valida que solo se ingresen numeros en el campo "cedula"
+    public boolean validarSoloNumeros(char codigo){
+        boolean flag = false;
+        if(Character.isDigit(codigo)){
+            flag = true;
+        }
+        return flag;
+    }
+    
+    // valida que solo se ingrese texto en el campo "nombre"
+    public boolean validarSoloTexto(char texto){
+        boolean flag = false;
+        if(Character.isLetter(texto) || Character.isSpaceChar(texto) || Character.isUpperCase(texto)){
+            flag = true;
+        }
+        return flag;
+                
     }
 }
-    
 

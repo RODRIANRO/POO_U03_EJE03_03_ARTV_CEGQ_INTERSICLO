@@ -6,7 +6,6 @@ package Controlador;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
-
 import java.util.List;
 import Modelo.Departamento;
 import Modelo.Empresa;
@@ -50,7 +49,7 @@ public class EmpresaControl {
     // valida que solo se ingrese texto en el campo "fundador"
     public boolean validarSoloTexto(char texto){
         boolean flag = false;
-        if(Character.isLetter(texto) || Character.isSpaceChar(texto)){
+        if(Character.isLetter(texto) || Character.isSpaceChar(texto) || Character.isUpperCase(texto)){
             flag = true;
         }
         return flag;

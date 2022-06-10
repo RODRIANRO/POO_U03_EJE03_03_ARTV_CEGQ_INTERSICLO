@@ -15,7 +15,7 @@ import Modelo.Empleado;
  */
 public class DepartamentoServicio implements IDepartamentoServicio{
     
-    private final List<Departamento> listaDepartamentos = new ArrayList<>();
+   private final List<Departamento> listaDepartamentos = new ArrayList<>();
 
     @Override
     public Departamento crearDepartamento(Departamento departamento) {
@@ -44,6 +44,5 @@ public class DepartamentoServicio implements IDepartamentoServicio{
     }
     
 }
-    
    
 

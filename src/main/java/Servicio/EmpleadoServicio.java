@@ -14,7 +14,7 @@ import Modelo.Empleado;
  * @author NOTEBOOK
  */
 public class EmpleadoServicio implements IEmpleadoServicio{
-    private final List<Empleado> listaEmpleados = new ArrayList<>();
+     private final List<Empleado> listaEmpleados = new ArrayList<>();
 
     @Override
     public Empleado crearEmpleado(Empleado empleado) {
@@ -37,11 +37,12 @@ public class EmpleadoServicio implements IEmpleadoServicio{
         return null;
     }
     
-    public void cambiarDepartamento(String cedula, Departamento departamento){
-        getEmpleadoByCedula(cedula).cambiarDepartamento(departamento);
+    public void asignarDepartamento(String cedula, Departamento departamento){
+        getEmpleadoByCedula(cedula).asignarDepartamento(departamento);
     }
     
     
 }
+
     
 

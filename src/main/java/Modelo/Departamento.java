@@ -9,7 +9,7 @@ package Modelo;
  * @author NOTEBOOK
  */
 public class Departamento {
-     private int codigo;
+    private int codigo;
     private String Nombre;
     private Empleado gerente;
     private Empresa empresa;

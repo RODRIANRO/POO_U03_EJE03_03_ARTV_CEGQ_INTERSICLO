@@ -5,6 +5,7 @@
 
 package com.mycompany.ejer03_03empresa;
 
+//import Vista.EmpresaVista;
 
 //import Vista.VistaEmpresa;
 /**
@@ -14,6 +15,7 @@ package com.mycompany.ejer03_03empresa;
 public class Ejer03_03Empresa {
     
       public static void main(String[] args) {
-        System.out.println("Hello World!");
+            /**  EmpresaVista ventanaEmpresa = new EmpresaVista();
+        ventanaEmpresa.setVisible(true);**/
     }
 }
